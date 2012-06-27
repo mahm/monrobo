@@ -19,7 +19,7 @@ class Mon
         param = Mon::Param.new(k, v)
         coord = PARTS_POSITIONS[k.to_s]
         image = Magick::Image.from_blob(File::read(path(param.pos).join(param.filename))).first
-        image = image.color_floodfill(0, 0, param.color) if param.color.present?
+        image = image.level_colors(param.color, "white") if param.color.present?
         result = result.composite(image, Magick::CenterGravity, coord.first, coord.last, Magick::OverCompositeOp)
       end
       result.write(Rails.root.join('out.png'))
