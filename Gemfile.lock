@@ -127,7 +127,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rmagick (2.13.1)
+    rmagick (2.12.0)
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -190,7 +190,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.5)
-  rmagick
+  rmagick (= 2.12.0)
   rspec-rails
   sass-rails (~> 3.2.3)
   simple_form

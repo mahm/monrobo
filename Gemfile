@@ -23,4 +23,4 @@ gem 'erb2haml', group: :development
 gem 'heroku_san', group: :development
 gem 'devise'
 gem "hashie"
-gem "rmagick"
+gem "rmagick", "2.12.0", require: 'RMagick'
