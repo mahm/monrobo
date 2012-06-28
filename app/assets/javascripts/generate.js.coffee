@@ -38,28 +38,11 @@ Monrobo =
 $ ->
   $('[data-part]').click ->
     self = $(this)
-    switch self.data('part')
-      when 'body'
-        Monrobo.parts.body.file = self.data('file')
-        $.beActive(self, 'body')
-      when 'side_l'
-        Monrobo.parts.side_l.file = self.data('file')
-        $.beActive(self, 'side_l')
-      when 'side_r'
-        Monrobo.parts.side_r.file = self.data('file')
-        $.beActive(self, 'side_r')
-      when 'crown'
-        Monrobo.parts.crown.file = self.data('file')
-        $.beActive(self, 'crown')
-      when 'center'
-        Monrobo.parts.center.file = self.data('file')
-        $.beActive(self, 'center')
-      when 'ribon'
-        Monrobo.parts.ribon.file = self.data('file')
-        $.beActive(self, 'ribon')
+    eval("Monrobo.parts.#{self.data('part')}.#{self.data('type')} = self.data(self.data('type'))")
+    $.beActive(self, self.data('part'))
     Monrobo.pushImage(Monrobo)
 
   $.beActive = (self, pos) ->
-    $("[data-part=#{pos}]").each ->
+    $("[data-part=#{pos}][data-#{$(self).data('type')}]").each ->
       $(this).removeClass('active')
     self.addClass('active')

@@ -8,20 +8,14 @@
 
 .tab-content
   .tab-pane.active#body
-    - Mon::body_list.each do |path|
-      = image_tag path, data: {part: "body", file: File::basename(path)}
+    = render "material_parts", list: Mon::body_list, part: "body"
   .tab-pane#side_l
-    - Mon::side_l_list.each do |path|
-      = image_tag path, data: {part: "side_l", file: File::basename(path)}
+    = render "material_parts", list: Mon::side_l_list, part: "side_l"
   .tab-pane#side_r
-    - Mon::side_r_list.each do |path|
-      = image_tag path, data: {part: "side_r", file: File::basename(path)}
+    = render "material_parts", list: Mon::side_r_list, part: "side_r"
   .tab-pane#crown
-    - Mon::crown_list.each do |path|
-      = image_tag path, data: {part: "crown", file: File::basename(path)}
+    = render "material_parts", list: Mon::crown_list, part: "crown"
   .tab-pane#center
-    - Mon::center_list.each do |path|
-      = image_tag path, data: {part: "center", file: File::basename(path)}
+    = render "material_parts", list: Mon::center_list, part: "center"
   .tab-pane#ribon
-    - Mon::ribon_list.each do |path|
-      = image_tag path, data: {part: "ribon", file: File::basename(path)}
+    = render "material_parts", list: Mon::ribon_list, part: "ribon"

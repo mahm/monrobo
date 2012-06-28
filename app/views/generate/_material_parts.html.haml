@@ -1,0 +1,5 @@
+.colors
+  - colors.each do |color|
+    .color{style: "background-color: #{color}", data: {type: "color", part: part, color: color}}
+- list.each do |path|
+  = image_tag path, data: {type: "file", part: part, file: File::basename(path)}
