@@ -13,4 +13,8 @@ class GenerateParameter < ActiveRecord::Base
     return nil if elem == "null"
     elem
   end
+
+  def self.clean
+    GenerateParameter.where("created_at < ?", 1.days.ago).delete_all
+  end
 end
