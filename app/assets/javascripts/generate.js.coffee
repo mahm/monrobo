@@ -43,7 +43,6 @@ $ ->
          Monrobo.parts.body.file = self.data('file')
        when 'side_l'
          Monrobo.parts.side_l.file = self.data('file')
-         console.log Monrobo.parts.side_l
        when 'side_r'
          Monrobo.parts.side_r.file = self.data('file')
        when 'crown'
