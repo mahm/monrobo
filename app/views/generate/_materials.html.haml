@@ -1,0 +1,27 @@
+%ul.nav.nav-tabs
+  %li.active= link_to "メイン", "#body", "data-toggle" => "tab"
+  %li= link_to "左サイド", "#side_l", "data-toggle" => "tab"
+  %li= link_to "右サイド", "#side_r", "data-toggle" => "tab"
+  %li= link_to "クラウン", "#crown", "data-toggle" => "tab"
+  %li= link_to "センター", "#center", "data-toggle" => "tab"
+  %li= link_to "リボン", "#ribon", "data-toggle" => "tab"
+
+.tab-content
+  .tab-pane.active#body
+    - Mon::body_list.each do |path|
+      = image_tag path, data: {part: "body", file: File::basename(path)}
+  .tab-pane#side_l
+    - Mon::side_l_list.each do |path|
+      = image_tag path, data: {part: "side_l", file: File::basename(path)}
+  .tab-pane#side_r
+    - Mon::side_r_list.each do |path|
+      = image_tag path, data: {part: "side_r", file: File::basename(path)}
+  .tab-pane#crown
+    - Mon::crown_list.each do |path|
+      = image_tag path, data: {part: "crown", file: File::basename(path)}
+  .tab-pane#center
+    - Mon::center_list.each do |path|
+      = image_tag path, data: {part: "center", file: File::basename(path)}
+  .tab-pane#ribon
+    - Mon::ribon_list.each do |path|
+      = image_tag path, data: {part: "ribon", file: File::basename(path)}
